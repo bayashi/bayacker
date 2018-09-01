@@ -13,7 +13,6 @@ ENTRYPOINT ["/bin/bash"]
 ENV MY_USER bayashi
 ENV MY_HOME /home/bayashi
 ENV PERL_DIR /perl5
-
 ENV PERL_VERSION 5.28.0
 ENV PATH $MY_HOME/${PERL_DIR}-${PERL_VERSION}/bin:$PATH
 
@@ -26,3 +25,8 @@ RUN mkdir $MY_HOME/${PERL_DIR}-${PERL_VERSION} \
 RUN perl-build $PERL_VERSION $MY_HOME/${PERL_DIR}-${PERL_VERSION}
 RUN curl -sL http://cpanmin.us/ | $MY_HOME/${PERL_DIR}-${PERL_VERSION}/bin/perl - --notest App::cpanminus Carton
 
+# daemontools for envdir
+# https://github.com/kteru/daemontools-rpm
+COPY daemontools-toaster-0.76-1.3.6.x86_64.rpm ./
+RUN sudo rpm -ivh daemontools-toaster-0.76-1.3.6.x86_64.rpm
+RUN rm -f ./daemontools-toaster-0.76-1.3.6.x86_64.rpm
