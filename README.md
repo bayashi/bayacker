@@ -37,3 +37,8 @@ add `-f` to force delete
 without build cache
 
     $ docker build --no-cache -t bayacker .
+
+## run
+
+    $ docker run -t bayacker
+    [root@ee0a6c51e176 /]# 
