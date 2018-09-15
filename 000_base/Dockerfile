@@ -32,6 +32,7 @@ RUN yum install -y \
     tar \
     wget \
     perl-core \
+    yum-plugin-ovl \
 && yum clean all
 
 #----- git
