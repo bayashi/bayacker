@@ -25,8 +25,10 @@ RUN mkdir $MY_HOME/${PERL_DIR}-${PERL_VERSION} \
 RUN perl-build $PERL_VERSION $MY_HOME/${PERL_DIR}-${PERL_VERSION}
 RUN curl -sL http://cpanmin.us/ | $MY_HOME/${PERL_DIR}-${PERL_VERSION}/bin/perl - --notest App::cpanminus Carton
 
+RUN cpanm --notest Plack
+
 # daemontools for envdir
 # https://github.com/kteru/daemontools-rpm
-COPY daemontools-toaster-0.76-1.3.6.x86_64.rpm ./
-RUN sudo rpm -ivh daemontools-toaster-0.76-1.3.6.x86_64.rpm \
-&& rm -f ./daemontools-toaster-0.76-1.3.6.x86_64.rpm
+#COPY daemontools-toaster-0.76-1.3.6.x86_64.rpm ./
+#RUN sudo rpm -ivh daemontools-toaster-0.76-1.3.6.x86_64.rpm \
+#&& rm -f ./daemontools-toaster-0.76-1.3.6.x86_64.rpm
