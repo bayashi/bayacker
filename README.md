@@ -32,13 +32,13 @@ add `-f` to force delete
 ## build
 
     $ vi Dockerfile
-    $ docker build -t bayacker .
+    $ docker build -t bayashi/bayacker .
 
 without build cache
 
-    $ docker build --no-cache -t bayacker .
+    $ docker build --no-cache -t bayahi/bayacker .
 
 ## run
 
-    $ docker run -t bayacker
+    $ docker run -t bayashi/bayacker
     [root@ee0a6c51e176 /]# 
