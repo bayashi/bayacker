@@ -29,9 +29,9 @@ RUN yum remove -y \
 #----- etc packages
 RUN yum install -y \
     gcc \
+    perl-core \
     tar \
     wget \
-    perl-core \
     yum-plugin-ovl \
 && yum clean all
 
@@ -53,9 +53,6 @@ RUN wget https://mirrors.edge.kernel.org/pub/software/scm/git/git-$GIT_VERSION.t
 
 #----- utils
 RUN yum install -y \
-    sudo \
-    patch \
-    which \
     crontabs \
     iptables-devel \
     jq \
@@ -68,16 +65,19 @@ RUN yum install -y \
     lsof \
     ntp \
     ntpdate \
+    patch \
     pcre-devel \
     rpm-build \
     rsync \
     screen \
     strace \
+    sudo \
     tcpdump \
     telnet \
     time \
     traceroute \
     tree \
+    which \
 && yum clean all
 
 #----- bayashi user
