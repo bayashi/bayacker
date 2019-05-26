@@ -42,3 +42,8 @@ without build cache
 
     $ docker run -t bayashi/bayacker
     [root@ee0a6c51e176 /]# 
+
+## dockerhub
+
+    $ docker login
+    $ docker push bayashi/bayacker:latest

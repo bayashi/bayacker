@@ -7,8 +7,6 @@ FROM centos:centos6.7
 
 MAINTAINER bayashi
 
-ENTRYPOINT ["/bin/bash"]
-
 WORKDIR /setup
 
 #----- yum packages
