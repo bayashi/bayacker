@@ -79,21 +79,3 @@ RUN yum install -y \
     tree \
     which \
 && yum clean all
-
-#----- bayashi user
-ENV MY_USER bayashi
-RUN useradd $MY_USER \
-&& echo "$MY_USER:" | chpasswd \
-&& mkdir /home/$MY_USER/.ssh \
-&& chmod 700 /home/$MY_USER/.ssh \
-&& chown -R $MY_USER:$MY_USER /home/$MY_USER/.ssh
-RUN echo "$MY_USER ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/$MY_USER
-
-RUN mkdir /home/$MY_USER/bin \
-&& chown $MY_USER:$MY_USER /home/$MY_USER/bin
-ENV PATH /home/$MY_USER/bin:$PATH
-
-ENV HOME /home/$MY_USER
-WORKDIR /home/$MY_USER
-USER $MY_USER
-
