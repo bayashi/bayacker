@@ -91,4 +91,4 @@ RUN curl -sL http://cpanmin.us/ | ${PERL_DIR}-${PERL_VERSION}/bin/perl - --notes
 
 ENV PATH ${PERL_DIR}-${PERL_VERSION}/bin:$PATH
 
-RUN ["cpanm", "-L", "local", "--notest", "git://github.com/bayashi/j.git@master"]
+RUN ["cpanm", "--notest", "https://raw.githubusercontent.com/bayashi/j/master/tarballs/j-0.01.tar.gz"]
